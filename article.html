@@ -47,7 +47,7 @@
         }
     </style>
 </head>
-<body>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
@@ -57,35 +57,46 @@
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
-
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
 
-            <a href="./index.html#overview" class="mdl-layout__tab is-active">Overview</a>
-            <a href="./index.html#articles" class="mdl-layout__tab">Articles</a>
+            <a href="./index.html#overview" class="mdl-layout__tab ">Overview</a>
+            <a href="./index.html#articles" class="mdl-layout__tab is-active">Articles</a>
             <a href="#features" class="mdl-layout__tab">Details</a>
             <a href="#features" class="mdl-layout__tab">Technology</a>
             <a href="#features" class="mdl-layout__tab">FAQ</a>
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent"
-                    id="add">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
                 <i class="material-icons" role="presentation">add</i>
                 <span class="visuallyhidden">Add</span>
             </button>
         </div>
-        <div class="mdl-layout__header">
-            <div class="col s12" id="breadcrumbs">
-                <a href="./index.html#articles" class="breadcrumb">Articles</a>
-            </div>
-        </div>
     </header>
-    <main class="mdl-layout__tab-panel">
-        <section class="section--center mdl-grid mdl-grid--no-spacing">
-            <div w3-include-html="finance.html">
-                <script>
-                    w3IncludeHTML();
-                </script>
+    <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active">
+            <section class="section--center mdl-grid mdl-grid--no-spacing">
+                <div w3-include-html="finance.html">
+                    <script>
+                        w3IncludeHTML();
+                    </script>
+                </div>
+            </section>
+        </div>
+        <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer--middle-section">
+                <div class="mdl-mega-footer--drop-down-section">
+                    <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                    <h1 class="mdl-mega-footer--heading">Features</h1>
+                    <ul class="mdl-mega-footer--link-list">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Updates</a></li>
+                    </ul>
+                </div>
+
             </div>
-        </section>
+        </footer>
     </main>
 </div>
+<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 </body>
 </html>
