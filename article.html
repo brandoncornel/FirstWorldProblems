@@ -46,8 +46,32 @@
             z-index: 900;
         }
     </style>
+    <script type="text/javascript">
+        function checkHash() {
+            // Check URL using setTimeout as it may not change before
+            // listener is called
+            window.setTimeout(doHashCheck, 10)
+        }
+        var doHashCheck = (function(global) {
+            return function() {
+                var fnName = window.location.hash.replace(/^#/,'');
+                console.log(fnName);
+                var article = fnName.match(/\?.*/);
+                article = article[0].replace(/^\?/, '');
+                console.log(article);
+                fnName = fnName.replace(/\?.*/, '');
+                // fnName should be a native function, not a host method
+                if (typeof global[fnName] == 'function') {
+                    global[fnName](article);
+                }
+            }
+        })(this);
+
+        if (!window.console) window.console = {};
+        if (!console.log) console.log = window.alert;
+    </script>
 </head>
-<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" onload="checkHash()">
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
@@ -60,7 +84,7 @@
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
 
             <a href="./index.html#overview" class="mdl-layout__tab ">Overview</a>
-            <a href="./index.html#articles" class="mdl-layout__tab is-active">Articles</a>
+            <a href="./index.html#showArticles" class="mdl-layout__tab is-active">Articles</a>
             <a href="#features" class="mdl-layout__tab">Details</a>
             <a href="#features" class="mdl-layout__tab">Technology</a>
             <a href="#features" class="mdl-layout__tab">FAQ</a>
@@ -74,14 +98,11 @@
         <div class="mdl-layout__tab-panel is-active">
             <section class="section--center mdl-grid mdl-grid--no-spacing">
                 <script>
-                    $(function(){
-                        $("#include_article").load("finance.html");
-                    });
+                    function loadArticle(article){
+                        $("#include_article").load(article + '.html');
+                    }
                 </script>
                 <div class="mdl-layout__content" id="include_article">
-                    <script>
-                        w3IncludeHTML();
-                    </script>
                 </div>
             </section>
         </div>

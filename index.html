@@ -62,8 +62,29 @@
       z-index: 900;
     }
     </style>
+
+    <script type="text/javascript">
+      function checkHash() {
+        // Check URL using setTimeout as it may not change before
+        // listener is called
+        window.setTimeout(doHashCheck, 10)
+      }
+      var doHashCheck = (function(global) {
+        return function() {
+          var fnName = window.location.hash.replace(/^#/,'');
+          console.log(fnName);
+          // fnName should be a native function, not a host method
+          if (typeof global[fnName] == 'function') {
+            global[fnName]();
+          }
+        }
+      })(this);
+
+      if (!window.console) window.console = {};
+      if (!console.log) console.log = window.alert;
+    </script>
   </head>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" onload="checkHash()">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
@@ -75,8 +96,8 @@
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
 
-          <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
-          <a href="#articles" class="mdl-layout__tab">Articles</a>
+          <a href="#overview" class="mdl-layout__tab is-active" id="overview_tab">Overview</a>
+          <a href="#articles" class="mdl-layout__tab" id="articles_tab">Articles</a>
           <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a>
@@ -92,15 +113,25 @@
           $("#overview").load("overview.html");
         });
       </script>
-        <div class="mdl-layout__tab-panel is-active" id="overview">
+        <div class="mdl-layout__tab-panel is-active" id="overview"></div>
+        <script id="showArticles">
+          function showArticles() {
+            $("#articles").addClass("is-active");
+            $("#articles_tab").addClass("is-active");
+            $("#overview").removeClass("is-active");
+            $("#overview_tab").removeClass("is-active");
+            location.hash = '#articles';
+          }
 
-        </div>
+        </script>
         <div class="mdl-layout__tab-panel" id="articles">
           <section class="section--center mdl-grid mdl-grid--no-spacing">
             <div class="mdl-cell mdl-cell--12-col">
               <h4>Articles</h4>
               <ul class="demo-list-item mdl-list">
-                <li class="mdl-list__item"><a href="./article.html">Finance</a><li>
+                <li class="mdl-list__item"><a href="./article.html#loadArticle?finance">Finance</a><li>
+                <li class="mdl-list__item"><a href="./article.html#loadArticle?credit">Credit</a><li>
+                <li class="mdl-list__item"><a href="./article.html#loadArticle?savings">Savings Account</a><li>
               </ul>
             </div>
           </section>
