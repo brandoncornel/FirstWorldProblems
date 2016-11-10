@@ -10,7 +10,7 @@
       https://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,w
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License
@@ -90,31 +90,29 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Financipedia</h3>
+          <h1>Financipedia</h1>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
 
-          <a href="#overview" class="mdl-layout__tab is-active" id="overview_tab">Overview</a>
+          <a href="#overview" class="mdl-layout__tab is-active" id="overview_tab">Home</a>
           <a href="#articles" class="mdl-layout__tab" id="articles_tab">Articles</a>
-          <a href="#features" class="mdl-layout__tab">Details</a>
-          <a href="#features" class="mdl-layout__tab">Technology</a>
-          <a href="#features" class="mdl-layout__tab">FAQ</a>
-          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
-            <i class="material-icons" role="presentation">add</i>
-            <span class="visuallyhidden">Add</span>
-          </button>
+          <a href="#features" class="mdl-layout__tab">Job Postings</a>
+          <a href="#features" class="mdl-layout__tab">Webinars</a>
+          <a href="#features" class="mdl-layout__tab">Quizzes</a>
+            <a href="#features" class="mdl-layout__tab">Success Stories</a>
         </div>
       </header>
       <main class="mdl-layout__content">
         <script>
         $(function(){
           $("#overview").load("overview.html");
+
+
         });
       </script>
         <div class="mdl-layout__tab-panel is-active" id="overview">
-          <img src="images/ic_settings_black_48dp_2x.png" alt="Smiley face" height="25" width="25">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
               <i class="material-icons">play_circle_filled</i>
@@ -129,14 +127,7 @@
                 <a href="#" class="mdl-button">Read our features</a>
               </div>
             </div>
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>
+
           </section>
 
         </div>
@@ -166,12 +157,15 @@
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Features</h1>
+              <h1 class="mdl-mega-footer--heading">Financipedia</h1>
               <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Updates</a></li>
+                <li><a href="#overview">Home</a></li>
+                <li><a href="#articles" id="articles_tab">Articles</a></li>
+                <li><a href="#">Job Postings</a></li>
+                <li><a href="#">Webinars</a></li>
+                  <li><a href="#">Quizzes</a></li>
+                  <li><a href="#">Success Stories</a></li>
+
               </ul>
             </div>
 
