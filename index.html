@@ -99,9 +99,9 @@
           <a href="#overview" class="mdl-layout__tab is-active" id="overview_tab">Home</a>
           <a href="#articles" class="mdl-layout__tab" id="articles_tab">Articles</a>
           <a href="#features" class="mdl-layout__tab">Job Postings</a>
-          <a href="#features" class="mdl-layout__tab">Webinars</a>
+          <a href="#webinars" class="mdl-layout__tab">Webinars</a>
           <a href="#features" class="mdl-layout__tab">Quizzes</a>
-            <a href="#success_stories" class="mdl-layout__tab" id="success_stories_tab">Success Stories</a>
+          <a href="#success_stories" class="mdl-layout__tab" id="success_stories_tab">Success Stories</a>
         </div>
 
       </header>
@@ -109,8 +109,8 @@
         <script>
         $(function(){
           $("#overview").load("overview.html");
-          $("#success_stories").load("success_stories.html");
-
+		  $("#success_stories").load("success_stories.html");
+		  $("#webinars").load("webinars.html");		  
 
 
         });
@@ -145,7 +145,11 @@
             </div>
           </section>
         </div>
-        <footer class="mdl-mega-footer">
+        <div class="mdl-layout__tab-panel" id="webinars">
+
+
+        </div>
+		<footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
