@@ -98,9 +98,9 @@
 
           <a href="#overview" class="mdl-layout__tab is-active" id="overview_tab">Home</a>
           <a href="#articles" class="mdl-layout__tab" id="articles_tab">Articles</a>
-          <a href="#job_postings" class="mdl-layout__tab">Job Postings</a>
-          <a href="#webinars" class="mdl-layout__tab">Webinars</a>
-          <a href="#features" class="mdl-layout__tab">Quizzes</a>
+          <a href="#job_postings" class="mdl-layout__tab" id="jobs_tab">Job Postings</a>
+          <a href="#webinars" class="mdl-layout__tab" id="webinars_tab">Webinars</a>
+          <a href="#features" class="mdl-layout__tab" id="quiz_tab">Quizzes</a>
           <a href="#success_stories" class="mdl-layout__tab" id="success_stories_tab">Success Stories</a>
         </div>
 
@@ -119,7 +119,16 @@
 
 
         </div>
+          <script id="showSuccessStories">
+              function showSuccessStories() {
+                  $("#success_stories").addClass("is-active");
+                  $("#success_stories_tab").addClass("is-active");
+                  $("#overview").removeClass("is-active");
+                  $("#overview_tab").removeClass("is-active");
+                  location.hash = '#success_stories';
+              }
 
+          </script>
         <div class="mdl-layout__tab-panel" id="success_stories">
 
         </div>
@@ -145,10 +154,27 @@
             </div>
           </section>
         </div>
+          <script id="showWebinars">
+              function showWebinars() {
+                  $("#webinars").addClass("is-active");
+                  $("#webinars_tab").addClass("is-active");
+                  $("#overview").removeClass("is-active");
+                  $("#overview_tab").removeClass("is-active");
+                  location.hash = '#webinars';
+              }
+          </script>
         <div class="mdl-layout__tab-panel" id="webinars">
 
-
         </div>
+          <script id="showJobs">
+              function showJobs() {
+                  $("#job_postings").addClass("is-active");
+                  $("#jobs_tab").addClass("is-active");
+                  $("#overview").removeClass("is-active");
+                  $("#overview_tab").removeClass("is-active");
+                  location.hash = '#job_postings';
+              }
+          </script>
 		<div class="mdl-layout__tab-panel" id="job_postings">
 		</div>
 		<footer class="mdl-mega-footer">
@@ -158,7 +184,7 @@
               <h1 class="mdl-mega-footer--heading">Financipedia</h1>
               <ul class="mdl-mega-footer--link-list">
                 <li><a href="#overview">Home</a></li>
-                <li><a href="#articles" id="articles_tab">Articles</a></li>
+                <li><a href="#articles" id="articles_link">Articles</a></li>
                 <li><a href="#">Job Postings</a></li>
                 <li><a href="#">Webinars</a></li>
                   <li><a href="#">Quizzes</a></li>
