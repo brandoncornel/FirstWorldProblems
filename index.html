@@ -100,7 +100,7 @@
           <a href="#articles" class="mdl-layout__tab" id="articles_tab">Articles</a>
           <a href="#job_postings" class="mdl-layout__tab" id="jobs_tab">Job Postings</a>
           <a href="#webinars" class="mdl-layout__tab" id="webinars_tab">Webinars</a>
-          <a href="#features" class="mdl-layout__tab" id="quiz_tab">Quizzes</a>
+          <a href="#quizzes" class="mdl-layout__tab" id="quiz_tab">Quizzes</a>
           <a href="#success_stories" class="mdl-layout__tab" id="success_stories_tab">Success Stories</a>
         </div>
 
@@ -177,6 +177,29 @@
           </script>
 		<div class="mdl-layout__tab-panel" id="job_postings">
 		</div>
+
+          <script id="showQuizzes">
+              function showQuizzes() {
+                  $("#quizzes").addClass("is-active");
+                  $("#quiz_tab").addClass("is-active");
+                  $("#overview").removeClass("is-active");
+                  $("#overview_tab").removeClass("is-active");
+                  location.hash = '#quizzes';
+              }
+
+          </script>
+          <div class="mdl-layout__tab-panel" id="quizzes">
+              <section class="section--center mdl-grid mdl-grid--no-spacing">
+                  <div class="mdl-cell mdl-cell--12-col">
+                      <h4>Quizzes</h4>
+                      <ul class="demo-list-item mdl-list">
+                          <li class="mdl-list__item"><a href="./quiz.html#loadQuiz?finance">Finance</a><li>
+                          <li class="mdl-list__item"><a href="./quiz.html#loadQuiz?credit">Credit</a><li>
+                          <li class="mdl-list__item"><a href="./quiz.html#loadQuiz?savings">Savings Account</a><li>
+                      </ul>
+                  </div>
+              </section>
+          </div>
 		<footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
